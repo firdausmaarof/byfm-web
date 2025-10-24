@@ -1,13 +1,14 @@
-# by FM - Portfolio Website
+# by FM - Personal Landing Page
 
-A modern, responsive portfolio website for showcasing software engineering skills, projects, and experience.
+A minimalist, modern landing page with a clean design and typing animation effect.
 
 ## 🚀 Features
 
-- **Modern Design**: Built with React and Tailwind CSS for a sleek, professional look
+- **Minimalist Design**: Clean, focused design that puts your brand front and center
+- **Typing Animation**: Smooth character-by-character typing effect
+- **Gradient Text Effect**: Eye-catching gradient on the main title
 - **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
-- **Smooth Animations**: Engaging user experience with smooth transitions and effects
-- **Easy to Customize**: Well-structured components for easy content updates
+- **Direct LinkedIn Link**: Prominent call-to-action button to your LinkedIn profile
 
 ## 🛠️ Tech Stack
 
@@ -42,48 +43,37 @@ npm run dev
 
 ## 🎨 Customization
 
-### Personal Information
+### Update Your Information
 
-Update the following components with your actual information:
+Edit `src/components/Hero.jsx` to customize:
 
-1. **Hero Section** (`src/components/Hero.jsx`)
-
-   - Update social media links (LinkedIn, GitHub)
-   - Modify the tagline and description
-
-2. **About Section** (`src/components/About.jsx`)
-
-   - Replace placeholder text with your bio
-   - Add your story and background
-
-3. **Skills Section** (`src/components/Skills.jsx`)
-
-   - Update the skills array with your actual skills
-   - Add or remove skill categories as needed
-
-4. **Experience Section** (`src/components/Experience.jsx`)
-
-   - Replace with your actual work experience
-   - Update job titles, companies, and descriptions
-
-5. **Projects Section** (`src/components/Projects.jsx`)
-
-   - Add your actual projects
-   - Update GitHub and demo links
-   - Replace placeholder descriptions
-
-6. **Contact Section** (`src/components/Contact.jsx`)
-   - Update email address
-   - Verify social media links
+1. **Main Title**: Change "by FM" to your personal branding
+2. **Animated Text**: Update the typing animation text:
+   ```javascript
+   const fullText = "I'm a Software Engineer based in Malaysia.";
+   ```
+3. **LinkedIn URL**: Replace with your LinkedIn profile:
+   ```javascript
+   href = 'https://www.linkedin.com/in/firdausmaarof/';
+   ```
 
 ### Styling
 
 The website uses Tailwind CSS. You can customize:
 
-- Colors: Modify color classes (e.g., `bg-blue-600`, `text-gray-300`)
-- Spacing: Adjust padding and margin values
-- Fonts: Update font sizes and weights
-- Animations: Customize transition durations and effects
+- **Colors**: Modify the gradient colors in the title or button styles
+- **Animation Speed**: Adjust the typing speed by changing the interval value (currently 80ms)
+- **Typography**: Update font sizes and weights
+- **Background**: Customize the gradient background overlay
+
+### Page Content
+
+The page includes:
+
+- Large gradient "by FM" title
+- Animated typing text with cursor effect
+- LinkedIn profile button with hover animation
+- Subtle gradient background overlay
 
 ## 📝 Scripts
 
@@ -92,30 +82,77 @@ The website uses Tailwind CSS. You can customize:
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
-## 🚀 Deployment
+## 🚀 Deployment to GitHub Pages
 
-### Build for Production
+This project is configured for easy deployment to GitHub Pages.
+
+### Automatic Deployment (Recommended)
+
+The project includes a GitHub Actions workflow that automatically deploys when you push to the `main` branch.
+
+**Setup Steps:**
+
+1. Push your code to GitHub:
 
 ```bash
-npm run build
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/firdausmaarof/byfm.git
+git push -u origin main
 ```
 
-The optimized files will be in the `dist` folder.
+2. Enable GitHub Pages in your repository settings:
 
-### Deployment Options
+   - Go to Settings > Pages
+   - Under "Build and deployment", set:
+     - Source: **GitHub Actions**
 
-- **Vercel**: Connect your GitHub repo and deploy automatically
+3. The site will automatically deploy on every push to `main`
+   - View your site at: `https://firdausmaarof.github.io/byfm`
+
+### Manual Deployment
+
+You can also deploy manually using the gh-pages package:
+
+```bash
+npm run deploy
+```
+
+This will build the project and push it to the `gh-pages` branch.
+
+### Other Deployment Options
+
+- **Vercel**: Connect your GitHub repo for automatic deployments
 - **Netlify**: Drag and drop the `dist` folder or connect via Git
-- **GitHub Pages**: Use GitHub Actions to deploy from the `dist` folder
 - **AWS S3 + CloudFront**: Upload dist folder to S3 and serve via CloudFront
+
+## 📄 Project Structure
+
+```
+byfm/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml        # GitHub Actions deployment workflow
+├── src/
+│   ├── components/
+│   │   └── Hero.jsx          # Main landing page component
+│   ├── App.jsx               # Root component
+│   ├── main.jsx              # Entry point
+│   └── index.css             # Global styles with Tailwind imports
+├── public/
+│   └── .nojekyll             # Prevents Jekyll processing
+├── index.html                # HTML template
+├── vite.config.js            # Vite configuration (with base path)
+├── tailwind.config.js        # Tailwind configuration
+├── postcss.config.js         # PostCSS configuration
+└── package.json              # Project dependencies & scripts
+```
 
 ## 📄 License
 
 This project is open source and available for personal use.
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
 
 ---
 
