@@ -99,7 +99,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/firdausmaarof/byfm.git
+git remote add origin https://github.com/firdausmaarof/byfm-web.git
 git push -u origin main
 ```
 
@@ -110,7 +110,7 @@ git push -u origin main
      - Source: **GitHub Actions**
 
 3. The site will automatically deploy on every push to `main`
-   - View your site at: `https://firdausmaarof.github.io/byfm`
+   - View your site at: `https://firdausmaarof.github.io/byfm-web`
 
 ### Manual Deployment
 
